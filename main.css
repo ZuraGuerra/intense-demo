@@ -1,12 +1,12 @@
 body {
 	background-color: black;
-	font-family: 'Old Standard', sans-serif;
+	font-family: serif;
 	color: white;
 	text-align: center;
 }
 
 h1 {
-	font-family: 'Fjalla One', sans-serif;
+	font-family: sans-serif;
 	margin-bottom: -10px;
 }
 

@@ -1,13 +1,56 @@
 INTENSEJS: VISUALIZA IMÁGENES COMPLETAS EN FULL-SCREEN
 
-IntenseJS es una librería stand-alone (no depende de jQuery ni similares), que nos permite ver toda una imagen en pantalla completa al dar clic en ella; recibe inputs tanto de cursor como de touch y es bastante sencilla de implementar y usar.
+IntenseJS es una librería stand-alone (no depende de jQuery ni similares), que nos permite implementar un visor para mostrar toda una imagen en pantalla completa al dar clic en ella; recibe inputs tanto de cursor como de touch y es bastante sencilla de implementar y usar.
+
+En este demo, podrán apreciar una aplicación pequeña que consta de cinco archivos:
+
+INDEX.HTML
+La vista donde organizamos los elementos y cargamos los estilos y scripts que usaremos.
+
+MAIN.CSS
+Nuestra hoja de estilo.
+
+MAIN.JS
+El script en el que mandaremos llamar Intense y le diremos qué tomar de nuestro DOM.
+
+INTENSE.JS
+La librería de Intense.
+
+PLUS_CURSOR.PNG
+Una imagen que usaremos como cursor.
 
 SETUP
 
+INDEX.HTML
+
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-</body>
+	<head>
+		<!-- SCRIPTS -->
+		<script src='/intense.js'></script>
+		<script src='/main.js'></script>
+
+		<!-- ESTILOS -->
+		<link href= '/main.css' rel= 'stylesheet' type= 'text/css'>
+
+		<h1>AMAZING GALLERY</h1>
+		<p>Demo de <a href="http://tholman.com/intense-images/">IntenseJS</a> para Platzi.</p>
+	</head>
+	<body>
+	</body>
 </html>
+
+Es importante notar que debemos cargar Intense antes del script en el que lo mandaremos llamar; de otro modo, main.js no estaría refiriendo a nada.
+
+USO DE INTENSEJS
+
+HTML
+
+Para usar Intense, nuestras imágenes deben estar dentro de los atributos src o data-image; a cualquiera de estos podemos agregar los atributos data-title y data-caption para mostrar un título y una descripción en el visor.
+
+<img src="http://pulpcovers.com/wp-content/uploads/2011/05/26987515-Amazing_Stories_pulp_cover_October_1949.jpg" data-title="TIGER WOMAN OF SHADOW VALLEY" data-caption="by Berkeley Livingston"/>
+
+JS
+
+document.querySelector():
+
