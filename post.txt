@@ -2,7 +2,9 @@ INTENSEJS: VISUALIZA IMÁGENES COMPLETAS EN FULL-SCREEN
 
 IntenseJS es una librería stand-alone (no depende de jQuery ni similares), que nos permite implementar un visor para mostrar toda una imagen en pantalla completa al dar clic en ella; recibe inputs tanto de cursor como de touch y es bastante sencilla de implementar y usar.
 
-En este demo, podrán apreciar una aplicación pequeña que consta de cinco archivos:
+Esta librería nos resulta especialmente útil para mostrar al usuario imágenes que necesitan verse a detalle, como pinturas, o resulta vistoso para fotografías HD.
+
+En este demo (http://zuraguerra.github.io/intense-demo/), podrán apreciar una galería de covers de la revista Amazing Stories, una aplicación pequeña que consta de cinco archivos:
 
 INDEX.HTML
 La vista donde organizamos los elementos y cargamos los estilos y scripts que usaremos.
@@ -27,11 +29,11 @@ INDEX.HTML
 <html>
 	<head>
 		<!-- SCRIPTS -->
-		<script src='/intense.js'></script>
-		<script src='/main.js'></script>
+		<script src='intense.js'></script>
+		<script src='main.js'></script>
 
 		<!-- ESTILOS -->
-		<link href= '/main.css' rel= 'stylesheet' type= 'text/css'>
+		<link href= 'main.css' rel= 'stylesheet' type= 'text/css'>
 
 		<h1>AMAZING GALLERY</h1>
 		<p>Demo de <a href="http://tholman.com/intense-images/">IntenseJS</a> para Platzi.</p>
@@ -122,8 +124,87 @@ En el demo, el cursor cambia al estar sobre alguna imagen. Esto se logra así:
 MAIN.CSS
 
 div img {
-	cursor: url('/plus_cursor.png') 25 25, auto;
+	cursor: url('plus_cursor.png') 25 25, auto;
 }
 
 DEMO
 
+Se puede ver live aquí (http://zuraguerra.github.io/intense-demo/).
+
+INDEX.HTML quedó así:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- SCRIPTS -->
+	<script src='intense.js'></script>
+	<script src='main.js'></script>
+
+	<!-- ESTILOS -->
+	<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link href= 'main.css' rel= 'stylesheet' type= 'text/css'>
+
+	<h1>AMAZING GALLERY</h1>
+	<p>Demo de <a href="http://tholman.com/intense-images/">IntenseJS</a> para Platzi.</p>
+</head>
+<body>
+
+	<center>
+		<div>
+			<img src="http://pulpcovers.com/wp-content/uploads/2011/05/26987515-Amazing_Stories_pulp_cover_October_1949.jpg" data-title="TIGER WOMAN OF SHADOW VALLEY" data-caption="by Berkeley Livingston"/>
+
+			<img src="http://pulpcovers.com/wp-content/uploads/2011/05/27005267-Twin_Worlds_Amazing_Stories_cover_April_1937.jpg" data-title="TWIN WORLDS" data-caption="by Neil R. Jones"/>
+			
+			<img src="http://upload.wikimedia.org/wikipedia/commons/5/58/Amazing_Stories_December_1936.jpg" data-title="THE SPACE MARINES AND THE SLAVERS" data-caption="by Bob Olsen"/>
+		</div>
+	</center>
+</body>
+</html>
+
+Así MAIN.JS:
+
+window.onload = function() {
+    var elements = document.querySelectorAll('img');
+    Intense(elements);
+}
+
+Y así MAIN.CSS:
+
+body {
+	background-color: black;
+	font-family: 'Old Standard', sans-serif;
+	color: white;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+	margin-bottom: -10px;
+}
+
+div img {
+	cursor: url('plus_cursor.png') 25 25, auto;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 20%;
+	height: 20%;
+
+}
+
+div {
+	margin-top: 100px;
+}
+
+a {
+	color: yellow;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+GITHUB
+
+El repo se encuentra aquí (https://github.com/ZuraGuerra/intense-demo/).
