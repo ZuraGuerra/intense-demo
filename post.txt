@@ -1,0 +1,13 @@
+INTENSEJS: VISUALIZA IMÁGENES COMPLETAS EN FULL-SCREEN
+
+IntenseJS es una librería stand-alone (no depende de jQuery ni similares), que nos permite ver toda una imagen en pantalla completa al dar clic en ella; recibe inputs tanto de cursor como de touch y es bastante sencilla de implementar y usar.
+
+SETUP
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+</html>
