@@ -14,10 +14,10 @@ MAIN.JS
 El script en el que mandaremos llamar Intense y le diremos qué tomar de nuestro DOM.
 
 INTENSE.JS
-La librería de Intense.
+La librería de Intense. Se puede descargar aquí (https://raw.githubusercontent.com/tholman/intense-images/master/intense.js).
 
 PLUS_CURSOR.PNG
-Una imagen que usaremos como cursor.
+Una imagen que usaremos como cursor. Se puede descargar aquí (https://raw.githubusercontent.com/tholman/intense-images/master/demo/img/plus_cursor.png).
 
 SETUP
 
@@ -52,5 +52,67 @@ Para usar Intense, nuestras imágenes deben estar dentro de los atributos src o 
 
 JS
 
-document.querySelector():
+window: Este objeto representa la ventana del navegador.
+
+onload: Es un evento que ocurre cuando un objeto ha sido cargado.
+
+window.onload: Por ende, se refiere a cuando carga la ventana.
+
+document.querySelector(): Es una función que acepta por parámetro un selector de CSS (por ejemplo, img) y regresa el primer elemento en el DOM que coincida con esa búsqueda.
+
+document.querySelectorAll(): Hace lo mismo que la anterior, pero regresa todos los elementos que coincidan.
+
+Intense acepta cualquier imagen. Para buscarlas dentro del DOM, podemos usar este script que básicamente dice "cuando cargue la ventana, ejecuta una función que primero cree la variable 'elements' a partir de los resultados de una búsqueda del selector de CSS 'img' y después mande 'elements' como parámetro a la función Intense()". Este es el que usaremos en nuestro demo, va dentro de main.js.
+
+window.onload = function() {
+	var elements = document.querySelectorAll('img');
+	Intense(elements);
+}
+
+Sólo como aclaración: si quisiéramos buscar un único elemento al que le pusimos la clase "special", por ejemplo, nuestro script sería el siguiente.
+
+window.onload = function() {
+	var element = document.querySelector('.special');
+	Intense(element);
+}
+
+CSS
+
+Intense usa el selector h1 para el título de la imagen y h2 para su descripción.
+
+Modificar directamente el selector img afecta también lo que se mostrará en el visor, lo cual puede romper la vista. Para reescalar mis imágenes y agregarles margen, decidí envolverlas en un div.
+
+INDEX.HTML
+
+<div>
+	<img class="framed" src="http://pulpcovers.com/wp-content/uploads/2011/05/26987515-Amazing_Stories_pulp_cover_October_1949.jpg" data-title="TIGER WOMAN OF SHADOW VALLEY" data-caption="by Berkeley Livingston"/>
+</div>
+
+MAIN.CSS
+
+div img {
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 20%;
+	height: 20%;
+}
+
+EXTRAS DEL DEMO
+
+GOOGLE FONTS
+
+Agregué mis hojas de estilo desde la API de Google Fonts a mi HTML y en el CSS sólo indico el nombre de la fuente para usarla en cierto selector.
+
+INDEX.HTML
+
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+MAIN.CSS
+
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+}
+
+CAMBIO DE CURSOR
+
 
