@@ -115,4 +115,15 @@ h1 {
 
 CAMBIO DE CURSOR
 
+cursor: Cambia el cursor. Para uno propio, acepta como parámetros la ubicación de la imagen, ubicación del puntero en x, ubicación en y.
+
+En el demo, el cursor cambia al estar sobre alguna imagen. Esto se logra así:
+
+MAIN.CSS
+
+div img {
+	cursor: url('/plus_cursor.png') 25 25, auto;
+}
+
+DEMO
 
