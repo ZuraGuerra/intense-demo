@@ -4,7 +4,7 @@ Necesitan tener instalados
 *[Git](https://git-scm.com/downloads)
 *[Python](https://www.python.org/downloads/)
 
-Para descargar, usen en Terminal
+Para descargar el repo, usen en Terminal
 ```bash
 git clone https://github.com/ZuraGuerra/intense-demo/
 ```
