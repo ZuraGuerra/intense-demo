@@ -1,0 +1,33 @@
+body {
+	background-color: black;
+	font-family: 'Old Standard', sans-serif;
+	color: white;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+	margin-bottom: -10px;
+}
+
+div img {
+	cursor: url('/plus_cursor.png') 25 25, auto;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 20%;
+	height: 20%;
+
+}
+
+div {
+	margin-top: 100px;
+}
+
+a {
+	color: yellow;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
